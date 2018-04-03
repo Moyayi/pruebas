@@ -67,3 +67,4 @@ public class Administrativo extends Empleado implements Titulado{
         return ale;    
     }
 }
+// Prueba de Pedro con David
