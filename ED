@@ -1,2 +1,69 @@
 Prueba numero 1
 prueba asdasdasd
+
+package pedro_moyanoeval2pro;
+
+public class Administrativo extends Empleado implements Titulado{
+    private int numOficina;
+    private String [] informes;
+    
+//CONSTRUCTOR
+    Administrativo(){
+    informes = new String[3];
+    numOficina = 2;
+        for (int i = 0; i < 3; i++) {
+            informes[i] = "Informe"+i;
+        }
+    }
+
+    Administrativo(int numOficina, String[] informes){
+    numOficina = 3;
+    informes = new String[5];
+        for (int i = 0; i < 5; i++) {
+            informes[i] = "Informe"+i;
+        }    
+    }
+//GETTER AND SETTER
+    public int getNumOficina() {
+        return numOficina;
+    }
+
+    public void setNumOficina(int numOficina) {
+        this.numOficina = numOficina;
+    }
+
+    public String[] getInformes() {
+        return informes;
+    }
+
+    public void setInformes(String[] informes) {
+        this.informes = informes;
+    }
+    
+//METODOS
+    @Override
+    void mostrarDatos() {
+        
+        String asd = "Administrativo: "+getDni()+" - "+getNombre()+" - "
+        +getApellidos()+" - "+getTelefono()+" - "+getCargo()+" - "+getSalario();
+        
+        
+        for (int i = 0; i < informes.length; i++) {
+            asd+= " - " +informes[i];
+        }
+        System.out.println(asd);
+    }
+
+    @Override
+    public String titulo() {
+        return "CFGSAdministración";
+    }
+
+    @Override
+    public int numCOlegiado() {
+        int ale=0;
+        ale = (int)(Math.random()*5+5);
+        
+        return ale;    
+    }
+}
